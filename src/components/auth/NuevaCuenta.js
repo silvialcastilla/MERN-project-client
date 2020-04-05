@@ -5,12 +5,14 @@ const NuevaCuenta = () => {
 
     //State para iniciar sesion
     const [usuario, guardarUsuario] = useState({
+        nombre: '',
         email:'',
-        password: ''
+        password: '',
+        confirmar: ''
     });
 
     //extraer de usuario
-    const {email, password} = usuario;
+    const {nombre, email, password, confirmar} = usuario;
 
     const onChange = e => {
         guardarUsuario({
@@ -31,11 +33,23 @@ const NuevaCuenta = () => {
   return (
     <div className="form-usuario">
       <div className="contenedor-form sombra-dark">
-        <h1>Iniciar Sesión</h1>
+        <h1>Obtener una cuenta</h1>
 
         <form
             onSubmit={onSubmit}
         >
+            <div className="campo-form">
+                <label htmlFor="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu Nombre"
+                    value={nombre}
+                    onChange={onChange}
+                />
+            </div>
+            
             <div className="campo-form">
                 <label htmlFor="email">Email</label>
                 <input
@@ -53,8 +67,19 @@ const NuevaCuenta = () => {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="Tu password"
+                    placeholder="Tu Password"
                     value={password}
+                    onChange={onChange}
+                />
+            </div>
+            <div className="campo-form">
+                <label htmlFor="confirmar">Confirmar Password</label>
+                <input
+                    type="password"
+                    id="confirmar"
+                    name="confirmar"
+                    placeholder="Repite tu Password"
+                    value={confirmar}
                     onChange={onChange}
                 />
             </div>
@@ -62,13 +87,13 @@ const NuevaCuenta = () => {
                 <input 
                 type="submit"
                 className="btn btn-primario btn-block"
-                value="Iniciar Sesión"
+                value="Registrarme"
                 />
             </div>
         </form>
 
-        <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-            Obtener Cuenta
+        <Link to={'/'} className="enlace-cuenta">
+            Volver a Iniciar Sesión
         </Link>
       </div>
     </div>

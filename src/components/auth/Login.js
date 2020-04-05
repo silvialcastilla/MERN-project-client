@@ -25,6 +25,10 @@ const Login = () => {
 
         //Validar que no hay campos vacios
 
+        //Password minimo de 6 caracteres
+
+        //Las dos contraseñas iguales
+
         //Pasarlo al action
     }
 
@@ -53,7 +57,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="Tu password"
+                    placeholder="Tu Password"
                     value={password}
                     onChange={onChange}
                 />
